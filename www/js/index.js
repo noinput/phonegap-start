@@ -38,5 +38,24 @@ var app = {
         document.querySelector('#' + id + ' .pending').className += ' hide';
         var completeElem = document.querySelector('#' + id + ' .complete');
         completeElem.className = completeElem.className.split('hide').join('');
+        
+        showAlert();
     }
 };
+
+
+    // alert dialog dismissed
+    function alertDismissed() {
+        // do something
+    }
+
+    // Show a custom alert
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You found an alert!',  // message
+            alertDismissed,         // callback
+            'Alert',            // title
+            'Done'                  // buttonName
+        );
+    }
